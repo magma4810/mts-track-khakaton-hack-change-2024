@@ -1,6 +1,6 @@
 export function header(div) {
   div.innerHTML = `
-        <div class="icon"><img src="./icon.png" alt=""><div class="name">LENDING</div></div>
+        <div class="icon"><img src="https://design.mts.ru/img/mts-logo.svg" alt=""><div class="name">LENDING</div></div>
         <div class="text-field__icon">
             <input class="text-field__input" type="search" name="search" id="search" placeholder="Введите данные сотрудника">
             <span class="text-field__aicon">
