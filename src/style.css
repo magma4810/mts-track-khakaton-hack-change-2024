@@ -1,9 +1,57 @@
 body {
-  color: aliceblue;
-  background: linear-gradient(to bottom right, #0a0c48, #565acd);
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
+  margin: 0px;
+}
+
+header {
+  background-color: black;
+  height: 10vh;
+  color: aliceblue;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+}
+
+header input {
+  width: 60vw;
+}
+
+.icon img {
+  font-size: 1.5vw;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  padding-left: 20px;
+}
+
+.text-field__icon {
+  position: relative;
+}
+.text-field__icon input {
+  padding-right: 2.5rem;
+  height: 4vh;
+  border-radius: 7px;
+}
+.text-field__aicon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0.875rem;
+  width: 1rem;
+  cursor: pointer;
+  color: #bdbdbd;
+  transition: color 0.35s ease-in-out;
+}
+.text-field__aicon:hover {
+  color: red;
 }
