@@ -1,7 +1,7 @@
 import "./style.css";
+import { header } from "./header";
 
-function plus(a, b) {
-  return a + b;
-}
+const headerHTML = document.createElement("header");
+document.body.append(headerHTML);
 
-console.log(plus(3, 3));
+header(headerHTML);
