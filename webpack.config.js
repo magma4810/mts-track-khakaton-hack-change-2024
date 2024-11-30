@@ -18,6 +18,10 @@ module.exports = {
         test: /\.html$/,
         use: "html-loader",
       },
+      {
+        test: /\.json$/, // Добавлено правило для обработки JSON файлов
+        type: "json", // Убедитесь, что тип 'json'
+      },
     ],
   },
   plugins: [
@@ -29,7 +33,6 @@ module.exports = {
       port: 3000,
       proxy: "http://127.0.0.1:8080/",
       notify: true, // disable the BrowserSync notification
-      template: "public/index.html",
     }),
   ],
   devServer: {
