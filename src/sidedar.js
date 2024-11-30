@@ -49,8 +49,10 @@ function filterCards() {
     const role = card.querySelector(".role").textContent;
     const city = card.querySelector(".city").textContent;
 
-    const roleMatches = selectedRoles.includes(role);
-    const cityMatches = selectedCities.includes(city);
+    const roleMatches =
+      selectedRoles.includes(role) && card.style.display !== "none";
+    const cityMatches =
+      selectedCities.includes(city) && card.style.display !== "none";
 
     const matches =
       (selectedRoles.length === 0 || roleMatches) &&

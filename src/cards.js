@@ -6,7 +6,7 @@ export function createNewCard(div) {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-        <h2>${person.Name} ${person.Surname}</h2>
+        <h2><div class="name">${person.Name}</div><div class="surname">${person.Surname}</div></h2>
         <p><strong>Должность:</strong> ${person.Job_title}</p>
         <p><strong>Телефон:</strong> ${person.Telephone}</p>
         <p><strong>Город:</strong> <div class="city">${person.City}</div></p>
