@@ -1,26 +1,30 @@
-export function sidebar(div) {
+import data from "../db/data.json";
+
+function createFilter(filter) {
+  const div = document.createElement("div");
+  div.className = "filter";
   div.innerHTML = `
-  <div class='filter'>
-  <button class="dropdown-btn"> 
- 	
-Подразделение 1 
+        <button class="dropdown-btn">${filter.filter_name}</button>
+    `;
+  div.appendChild(addValues(filter.value));
+  return div;
+}
 
-  </button>
-  <div class="dropdown-container">
-    <a href="#"><label><input type="checkbox">Центральный офис</label></a>
-    <a href="#"><label><input type="checkbox">Филиал в Оренбургской области</label></a>
-    <a href="#"><label><input type="checkbox">Филиал в Волгоградской области</label></a>
-    </div>
-    </div>
-    <div class='filter'>
-  <button class="dropdown-btn">Функциональный блок</button>
-  <div class="dropdown-container">
-    <a href="#"><label><input type="checkbox">Корпоративный блок</label></a>
-    <a href="#"><label><input type="checkbox">Розничный блок</label></a>
-    </div>
-  </div>
-  `;
+function addValues(values) {
+  const dropdown_container = document.createElement("div");
+  dropdown_container.className = "dropdown-container";
+  values.forEach((element) => {
+    dropdown_container.innerHTML += `<a href="#"><label><input type="checkbox">${element}</label></a>`;
+  });
+  return dropdown_container;
+}
 
+export function sidebar(div) {
+  const filters = data.filters;
+
+  filters.forEach((element) => {
+    div.appendChild(createFilter(element));
+  });
   let filter = document.querySelectorAll(".filter");
   filter.forEach(function (element) {
     let dropdown_container = element.querySelector(".dropdown-container");
