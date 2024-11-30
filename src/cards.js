@@ -1,6 +1,7 @@
 import data from "../db/data.json";
 
 export function createNewCard(div) {
+  div.innerHTML += '<div class = "coincidences">Совпадения не найдены :(</div>';
   const persons = data.persons;
   persons.forEach((person) => {
     const card = document.createElement("div");

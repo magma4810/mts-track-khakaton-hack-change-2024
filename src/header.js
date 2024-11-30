@@ -9,32 +9,34 @@ export function header(div) {
           </div>
     `;
   document.querySelector(".icon_button").addEventListener("click", () => {
-    filterNameOrSurname();
+    filterNameOrSurname(div);
   });
 }
 
 function filterNameOrSurname() {
-  const searchValue = document
-    .querySelector(".text-field__input")
-    .value.toLowerCase();
-  console.log(searchValue);
+  const input = document.querySelector(".text-field__input");
+  const searchValue = input.value.toLowerCase();
+  input.value = "";
   const cards = document.querySelectorAll(".card");
-
+  let coincidences = 0;
   cards.forEach((card) => {
     const name = card.querySelector(".name").textContent.toLowerCase();
     const surname = card.querySelector(".surname").textContent.toLowerCase();
     const nameAndSurname = name + " " + surname;
-    console.log(nameAndSurname);
-    console.log(searchValue);
     if (
-      (name.includes(searchValue) ||
-        surname.includes(searchValue) ||
-        nameAndSurname.includes(searchValue)) &&
-      card.style.display !== "none"
+      name.includes(searchValue) ||
+      surname.includes(searchValue) ||
+      nameAndSurname.includes(searchValue)
     ) {
+      coincidences++;
       card.style.display = "block";
     } else {
       card.style.display = "none";
     }
   });
+  if (coincidences) {
+    document.querySelector(".coincidences").style.display = "none";
+  } else {
+    document.querySelector(".coincidences").style.display = "block";
+  }
 }
