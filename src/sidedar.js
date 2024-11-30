@@ -19,7 +19,6 @@ function addValues(filter) {
     checkbox.type = "checkbox";
     checkbox.value = element;
     checkbox.name = filter.filter_name;
-
     const label = document.createElement("label");
     label.textContent = element;
     label.prepend(checkbox);
@@ -47,8 +46,7 @@ function filterCards() {
 
   cards.forEach((card) => {
     const role = card.querySelector(".role").textContent;
-    const city = card.querySelector(".city").textContent;
-
+    const city = card.querySelector(".city").textContent.split(",")[0];
     const roleMatches =
       selectedRoles.includes(role) && card.style.display !== "none";
     const cityMatches =

@@ -6,11 +6,11 @@ export function createNewCard(div) {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-            <h2><div class="name">${person.Name}</div><div class="surname">${person.Surname}</div></h2>
-            <p><strong>Должность:</strong> ${person.Job_title}</p>
-            <p><strong>Телефон:</strong> ${person.Telephone}</p>
-            <p><strong>Город:</strong> <div class="city">${person.City}</div></p>
-            <p><strong>Роль:</strong> <div class="role">${person.Role}</div></p>
+            <h2><div class="name">${person.name}</div><div class="surname">${person.surname}</div></h2>
+            <p><strong>Должность:</strong> ${person.position.name}</p>
+            <p><strong>Телефон:</strong> ${person.phone_number}</p>
+             <p><strong>Адрес:</strong> <div class="city">${person.address}</div></p>
+            <p><strong>Роль:</strong> <div class="role">${person.role.name}</div></p>
         `;
 
     card.addEventListener("click", () => {
@@ -22,21 +22,18 @@ export function createNewCard(div) {
 }
 
 function openModal(person) {
-  const modal = document.querySelector(".modal");
+  const modal = document.getElementById("modal");
   const modalBody = document.getElementById("modalBody");
 
   modalBody.innerHTML = `
-        <p><strong>Имя:</strong> ${person.Name}</p>
-        <p><strong>Фамилия:</strong> ${person.Surname}</p>
-        <p><strong>Должность:</strong> ${person.Job_title}</p>
-        <p><strong>Телефон:</strong> ${person.Telephone}</p>
-        <p><strong>Город:</strong> ${person.City}</p>
-        <p><strong>Адрес:</strong> ${person.Address}</p>
-        <p><strong>Подразделение:</strong> ${person.Subdivision_1}</p>
-        <p><strong>Функциональный блок:</strong> ${person.Function_block}</p>
-        <p><strong>Подразделение 2:</strong> ${person.Subdivision_2}</p>
-        <p><strong>Команда:</strong> ${person.Subdivision_3}</p>
-        <p><strong>Роль:</strong> ${person.Role}</p>
+        <p><strong>Имя:</strong> ${person.name}</p>
+        <p><strong>Фамилия:</strong> ${person.surname}</p>
+        <p><strong>Должность:</strong> ${person.position.name}</p>
+        <p><strong>Телефон:</strong> ${person.phone_number}</p>
+        <p><strong>Адрес:</strong> <div class="city">${person.address}</div></p>
+        <p><strong>Подразделение:</strong> ${person.division.name}</p>
+        <p><strong>Роль:</strong> ${person.role.name}</p>
+        
     `;
 
   modal.style.display = "block";
