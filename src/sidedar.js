@@ -6,17 +6,58 @@ function createFilter(filter) {
   div.innerHTML = `
         <button class="dropdown-btn">${filter.filter_name}</button>
     `;
-  div.appendChild(addValues(filter.value));
+  div.appendChild(addValues(filter));
   return div;
 }
 
-function addValues(values) {
+function addValues(filter) {
   const dropdown_container = document.createElement("div");
   dropdown_container.className = "dropdown-container";
+  const values = filter.value;
   values.forEach((element) => {
-    dropdown_container.innerHTML += `<a href="#"><label><input type="checkbox">${element}</label></a>`;
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = element;
+    checkbox.name = filter.filter_name;
+
+    const label = document.createElement("label");
+    label.textContent = element;
+    label.prepend(checkbox);
+
+    const link = document.createElement("a");
+    link.href = "#";
+    link.appendChild(label);
+
+    checkbox.addEventListener("change", filterCards);
+
+    dropdown_container.appendChild(link);
   });
+
   return dropdown_container;
+}
+
+function filterCards() {
+  const cards = document.querySelectorAll(".card");
+  const selectedRoles = Array.from(
+    document.querySelectorAll("input[type='checkbox'][name='Роль']:checked"),
+  ).map((checkbox) => checkbox.value);
+  const selectedCities = Array.from(
+    document.querySelectorAll("input[type='checkbox'][name='Город']:checked"),
+  ).map((checkbox) => checkbox.value);
+
+  cards.forEach((card) => {
+    const role = card.querySelector(".role").textContent;
+    const city = card.querySelector(".city").textContent;
+
+    const roleMatches = selectedRoles.includes(role);
+    const cityMatches = selectedCities.includes(city);
+
+    const matches =
+      (selectedRoles.length === 0 || roleMatches) &&
+      (selectedCities.length === 0 || cityMatches);
+
+    card.style.display = matches ? "block" : "none";
+  });
 }
 
 export function sidebar(div) {
