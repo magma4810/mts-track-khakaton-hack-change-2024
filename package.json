@@ -35,6 +35,9 @@
     "*.{js,css}": "prettier --write"
   },
   "resolutions": {
-  "rollup": "npm:@rollup/wasm-node"
-}
+    "rollup": "npm:@rollup/wasm-node"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.28.1"
+  }
 }
