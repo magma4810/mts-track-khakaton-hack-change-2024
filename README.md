@@ -1,15 +1,8 @@
-МТС Digital
-Трек Web/DA: Сервис визуализации организационной структуры
-В компании с тысячами сотрудников и множеством департаментов поиск нужного коллеги по должности или роли может затянуться. Как быстро и эффективно найти нужного специалиста?
+# React + Vite
 
-Создайте MVP веб-приложения для визуализации организационной структуры компании, которое поможет пользователям легко ориентироваться и находить сотрудников по косвенным признакам, не зная их точного имени или места в иерархии.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Ваша цель – создать интуитивное UX/UI решение, которое позволит наглядно отображать иерархические связи, подчиненность и состав команд.
+Currently, two official plugins are available:
 
-Стек технологий:
-Python/Go, JS/TypeScript, React
-
-Состав команды:
-Backend Developers
-Frontend Developer
-Data Analyst
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
