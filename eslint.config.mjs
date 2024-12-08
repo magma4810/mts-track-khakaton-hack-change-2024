@@ -9,6 +9,7 @@ export default [
         ...globals.browser,
         ...globals.node,
         ...globals.jest,
+        ...globals.react,
       },
     },
   },

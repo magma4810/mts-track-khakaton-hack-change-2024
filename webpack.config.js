@@ -22,6 +22,13 @@ module.exports = {
         test: /\.json$/, // Добавлено правило для обработки JSON файлов
         type: "json", // Убедитесь, что тип 'json'
       },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
     ],
   },
   plugins: [
