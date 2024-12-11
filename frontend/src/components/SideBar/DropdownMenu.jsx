@@ -32,9 +32,6 @@ export function DropdownMenu({children}){
                 {active && children==="Должность" && position.map(el => (
                     <MenuElement key={el}>{el}</MenuElement>
                 ))}
-                {active && children==="Город" && cityes.map(el => (
-                    <MenuElement key={el}>{el}</MenuElement>
-                ))}
                 {active && children==="Роль" && role.map(el => (
                     <MenuElement key={el}>{el}</MenuElement>
                 ))}

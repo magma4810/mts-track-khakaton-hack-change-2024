@@ -19,8 +19,8 @@ function App() {
     setIsLoading(true);
   }
   useEffect( () => {
-    getInformation();  
-  });
+    getInformation(); 
+  },[]);
 
   return (
     <>

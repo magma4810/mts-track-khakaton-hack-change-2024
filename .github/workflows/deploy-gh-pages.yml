@@ -12,13 +12,15 @@ jobs:
 
       - name: Install Packages
         run: |
+          cd frontend
           npm install
 
       - name: Build
         run: |
+          cd frontend
           npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # The folder the action should deploy.
+          folder: frontend/dist # The folder the action should deploy.
