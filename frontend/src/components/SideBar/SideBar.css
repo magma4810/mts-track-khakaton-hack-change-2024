@@ -6,9 +6,10 @@
     z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden;
+    overflow-x: auto;
     padding-top: 20px;
     background-color: #262626;
+    padding-bottom: 100px;
   }
 
   .sidenav a,
@@ -20,10 +21,14 @@
     display: block;
     border: none;
     background: none;
-    width: 90%;
     text-align: left;
     cursor: pointer;
     outline: none;
+  }
+
+  .dropdown-btn{
+    color: #af8d8d;
+    
   }
   
   .sidenav a:hover,
@@ -33,6 +38,14 @@
   }
   .dropdown-menu  {
     padding: 0;
+    max-height: 30vh; 
+    overflow-y: auto;
+    background-color: #343434; 
+    border: 1px solid #cccccc31;
+   border-radius: 2px;
+    z-index: 2; 
+    transition: max-height 1s ease;
+    overflow-x: hidden;
   }
 .menuElement{
     font-size: 2vh;

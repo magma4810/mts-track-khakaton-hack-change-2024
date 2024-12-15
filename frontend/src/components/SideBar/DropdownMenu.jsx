@@ -3,13 +3,22 @@ import { MenuElement } from "./MenuElement"
 import { useGetUsersInformation } from "../../hooks/useGetUsersInformation";
 import PropTypes from 'prop-types';
 
-export function DropdownMenu({children}){
-    const [active,setActive] = useState(false);
+export function DropdownMenu({children,...props}){
+
     const [cityes,setCityes] = useState([]);
     const [position,setPosition] = useState([]);
     const [role,setRole] = useState([]);
     const [division,setDivision] = useState([]);
     const {informationAboutUsers} = useGetUsersInformation();
+    const [checkedItems, setCheckedItems] = useState({});
+
+
+    function handleChange(item) {
+        setCheckedItems((prev) => ({
+            ...prev,
+            [item]: !prev[item],
+        }));
+    }
 
     useEffect(() => {
         const cityes = [...new Set(informationAboutUsers.map(city => city.address.split(",")[0]))];
@@ -24,21 +33,21 @@ export function DropdownMenu({children}){
 
     return(
         <>
-            <button className="dropdown-btn" onClick={()=>setActive(!active)}>{children}</button>
-            <ul className="dropdown-menu">
-                {active && children==="Город" && cityes.map(el => (
-                    <MenuElement key={el}>{el}</MenuElement>
+            <button key={children} className="dropdown-btn" onClick={()=>props.toggleDropdown(children)}>{children}</button>  
+            {props.active && <ul className="dropdown-menu">
+                {children === "Город" && cityes.map(el => (
+                    <MenuElement key={el} checked={checkedItems[el] || false} setСhecked={() => handleChange(el)}>{el}</MenuElement>
                 ))}
-                {active && children==="Должность" && position.map(el => (
-                    <MenuElement key={el}>{el}</MenuElement>
+                {children ==="Должность" && position.map(el => (
+                    <MenuElement key={el} checked={checkedItems[el] || false} setСhecked={() => handleChange(el)}>{el}</MenuElement>
                 ))}
-                {active && children==="Роль" && role.map(el => (
-                    <MenuElement key={el}>{el}</MenuElement>
+                {children ==="Роль" && role.map(el => (
+                    <MenuElement key={el} checked={checkedItems[el] || false} setСhecked={() => handleChange(el)}>{el}</MenuElement>
                 ))}
-                {active && children==="Подразделение" && division.map(el => (
-                    <MenuElement key={el}>{el}</MenuElement>
+                {children ==="Подразделение" && division.map(el => (
+                    <MenuElement key={el} checked={checkedItems[el] || false} setСhecked={() => handleChange(el)}>{el}</MenuElement>
                 ))}
-            </ul>
+            </ul>}
 
         </>
     )

@@ -1,6 +1,6 @@
 import  { useEffect } from "react";
 import { Header } from "./components/Header/Header";
-import { SideBar } from "./components/SideBar/SideBar";
+import { Main } from "./components/Main/Main";
 import { useGetUsersInformation } from "./hooks/useGetUsersInformation";
 import "./App.css";
 
@@ -12,11 +12,11 @@ function App() {
 
 
   async function getInformation() {
-    setIsLoading(false);
+    setIsLoading(true);
     const response = fetch("http://localhost:8080/api/v1/employees?offset=0&limit=100")
     .then((users) => users.json());
     setInformationAboutUsers(await response);
-    setIsLoading(true);
+    setIsLoading(false);
   }
   useEffect( () => {
     getInformation(); 
@@ -24,10 +24,8 @@ function App() {
 
   return (
     <>
-
       <Header />
-      <SideBar/>
-
+      <Main/>
     </>
   );
 }

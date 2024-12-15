@@ -5,18 +5,23 @@ export  const GetUsersInformationContext = createContext({
     informationAboutUsers: [],
     setInformationAboutUsers: null,
     isLoading: false,
-    setIsLoading: null
+    setIsLoading: null,
+    value: "",
+    setValue: null
 });
 
 export function GetUsersInformationProvider({children}){
     const [informationAboutUsers,setInformationAboutUsers] = useState([]);
     const [isLoading,setIsLoading] = useState(false);
+    const [value, setValue] = useState('');
     return (
         <GetUsersInformationContext.Provider value={{
             informationAboutUsers,
             setInformationAboutUsers,
             isLoading,
-            setIsLoading
+            setIsLoading,
+            value,
+            setValue
         }}>
             {children}
         </GetUsersInformationContext.Provider>

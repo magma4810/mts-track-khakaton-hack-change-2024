@@ -7,8 +7,7 @@ import { GetUsersInformationProvider } from "./components/GetUsersInformation.js
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GetUsersInformationProvider>
-    <App />
+      <App />
     </GetUsersInformationProvider>
-
   </StrictMode>,
 );
