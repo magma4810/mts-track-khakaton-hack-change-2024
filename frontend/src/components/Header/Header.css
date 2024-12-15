@@ -1,66 +1,66 @@
 header {
-    background-color: black;
-    height: 10vh;
-    color: aliceblue;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: fixed;
-    width: 100vw;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-  }
-  
-  header input {
-    width: 60vw;
-  }
-  
-  .icon img {
-    font-size: 1.5vw;
-  }
-  
-  .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .icon_button {
-    border: medium none;
-    background-image: none;
-    background: transparent;
-    float: left;
-    background-color: transparent;
-  }
-  
-  .nameLogo {
-    padding-left: 20px;
-    margin-right: 10px;
-    font-size: 3vh;
-  }
-  
-  .text-field__icon {
-    position: relative;
-  }
-  .text-field__icon input {
-    padding-right: 2.5rem;
-    height: 4vh;
-    border-radius: 7px;
-  }
-  .text-field__aicon {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    top: 0;
-    bottom: 0;
-    right: 0.875rem;
-    width: 1rem;
-    cursor: pointer;
-    color: #bdbdbd;
-    transition: color 0.35s ease-in-out;
-  }
-  .text-field__aicon:hover {
-    color: red;
-  }
+  background-color: black;
+  height: 10vh;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+header input {
+  width: 60vw;
+}
+
+.icon img {
+  font-size: 1.5vw;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_button {
+  border: medium none;
+  background-image: none;
+  background: transparent;
+  float: left;
+  background-color: transparent;
+}
+
+.nameLogo {
+  padding-left: 20px;
+  margin-right: 10px;
+  font-size: 3vh;
+}
+
+.text-field__icon {
+  position: relative;
+}
+.text-field__icon input {
+  padding-right: 2.5rem;
+  height: 4vh;
+  border-radius: 7px;
+}
+.text-field__aicon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0.875rem;
+  width: 1rem;
+  cursor: pointer;
+  color: #bdbdbd;
+  transition: color 0.35s ease-in-out;
+}
+.text-field__aicon:hover {
+  color: red;
+}

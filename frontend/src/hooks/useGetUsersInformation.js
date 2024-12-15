@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { GetUsersInformationContext } from "../components/GetUsersInformation";
+import { GetUsersInformationContext } from "../UsersContext";
 
-export function useGetUsersInformation(){
-    return useContext(GetUsersInformationContext);
+export function useGetUsersInformation() {
+  return useContext(GetUsersInformationContext);
 }
