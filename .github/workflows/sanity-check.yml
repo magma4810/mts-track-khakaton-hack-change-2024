@@ -1,0 +1,20 @@
+name: PR Sanity Check
+
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Packages
+        run: |
+          cd frontend
+          npm install
+
+      - name: Lint check
+        run: |
+          cd frontend
+          npm run lint
